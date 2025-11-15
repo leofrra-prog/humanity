@@ -236,6 +236,14 @@
       margin-bottom: 16px;
     }
 
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin: 14px 0 6px 0;
+    }
+
     /* ========= CARDS FEED ========= */
 
     .card {
@@ -288,6 +296,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      flex-wrap: wrap;
     }
 
     .card-name {
@@ -362,12 +371,14 @@
       gap: 8px;
       font-size: 11px;
       color: var(--text-muted);
+      margin-top: 4px;
     }
 
     .card-footer-left {
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     .dot {
@@ -394,6 +405,110 @@
 
     .btn-small span.icon {
       font-size: 13px;
+    }
+
+    .like-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 4px 8px;
+      background: rgba(15, 23, 42, 0.7);
+      cursor: pointer;
+      font-size: 11px;
+    }
+
+    .like-btn.liked {
+      border-color: rgba(248, 113, 113, 1);
+      background: radial-gradient(circle at top, rgba(248, 113, 113, 0.3), rgba(15, 23, 42, 0.95));
+      color: #fecaca;
+    }
+
+    .like-heart {
+      transition: transform 0.15s ease-out;
+    }
+
+    .like-btn.liked .like-heart {
+      transform: scale(1.2);
+    }
+
+    /* ========= COMMENTAIRES ========= */
+    .comments-toggle {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 11px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .comments-toggle span.chevron {
+      font-size: 12px;
+      transition: transform 0.15s ease-out;
+    }
+
+    .comments-toggle.open span.chevron {
+      transform: rotate(90deg);
+    }
+
+    .comments {
+      margin-top: 8px;
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      padding-top: 6px;
+      display: none;
+    }
+
+    .comments.open {
+      display: block;
+    }
+
+    .comment {
+      font-size: 11px;
+      color: #cbd5f5;
+      margin-bottom: 4px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .comment-author {
+      font-weight: 600;
+      color: #e0f2fe;
+    }
+
+    .comment-input-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .comment-input-row input {
+      flex: 1;
+      border-radius: 999px;
+      border: 1px solid rgba(30, 64, 175, 0.9);
+      padding: 5px 9px;
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-main);
+      font-size: 11px;
+      outline: none;
+    }
+
+    .comment-input-row input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .comment-send-btn {
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, var(--cyan), var(--turquoise));
+      color: #020617;
+      font-size: 11px;
+      padding: 5px 9px;
+      cursor: pointer;
+      font-weight: 600;
     }
 
     /* ========= SEARCH ========= */
@@ -439,6 +554,12 @@
       border-color: rgba(34, 211, 238, 1);
       color: var(--turquoise);
       background: radial-gradient(circle at top, rgba(34, 211, 238, 0.3), rgba(15, 23, 42, 0.95));
+    }
+
+    .empty-state {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 10px;
     }
 
     /* ========= ADD POST ========= */
@@ -547,14 +668,6 @@
     }
 
     /* ========= MISSIONS ========= */
-    .section-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      margin: 14px 0 6px 0;
-    }
-
     .mission-card {
       border-radius: var(--radius-lg);
       border: 1px solid rgba(22, 101, 52, 0.9);
@@ -695,6 +808,61 @@
       letter-spacing: 0.16em;
     }
 
+    /* ========= X FEED CARD ========= */
+    .x-card {
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), #020617);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+    }
+
+    .x-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-size: 12px;
+    }
+
+    .x-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .x-body {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .x-meta {
+      font-size: 10px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .x-refresh-btn {
+      border-radius: 999px;
+      border: none;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--turquoise);
+      font-size: 10px;
+      padding: 4px 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+    }
+
+    .x-link {
+      font-size: 10px;
+      color: #e0f2fe;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
     /* ========= BOTTOM NAV ========= */
     .bottom-nav {
       position: fixed;
@@ -806,7 +974,7 @@
           </div>
         </div>
         <div class="header-actions">
-          <!-- Ici tu peux laisser la logique futur pour type de compte -->
+          <!-- bascule entre compte asso et membre -->
           <button class="pill-role" id="roleToggle">
             <span class="role-dot"></span>
             <small id="roleLabel">Membre Huma</small>
@@ -820,9 +988,7 @@
         <div class="live-label">En direct</div>
         <div class="live-track">
           <div class="live-track-inner" id="liveMessages">
-            🌍 <span class="live-highlight">27 bénévoles</span> viennent de rejoindre une mission à Lille
-            • Lancement de la campagne <span class="live-highlight">Nuit solidaire</span>
-            • Humanité connecte déjà <span class="live-highlight">148 associations</span> et des centaines de membres
+            <!-- rempli par JS -->
           </div>
         </div>
       </div>
@@ -837,8 +1003,30 @@
           Découvre les dernières actions des associations et des membres Huma.
         </p>
 
+        <!-- Bloc vu sur X -->
+        <div class="section-label">Vu sur X</div>
+        <article class="card x-card">
+          <div class="x-header">
+            <span class="x-label">Tendance engagement</span>
+            <span>🕊️ #HumanitéLive</span>
+          </div>
+          <div class="x-body" id="xFeedText">
+            Chargement du flux X...
+          </div>
+          <div class="x-meta">
+            <button class="x-refresh-btn" id="xRefreshBtn">
+              ⟳ Actualiser le flux
+            </button>
+            <span class="x-link" id="xLink">
+              Ouvrir X
+            </span>
+          </div>
+        </article>
+
+        <div class="section-label">Pour toi</div>
+
         <!-- Exemple de post association -->
-        <article class="card">
+        <article class="card" data-card-id="1">
           <div class="card-header">
             <div class="avatar association">AS</div>
             <div class="card-meta">
@@ -855,24 +1043,50 @@
           </div>
           <div class="card-tags">
             <span class="chip chip-primary">Bénévolat urgent</span>
-            <span class="chip">Vendredi • 19h00–23h00</span>
+            <span class="chip">Vendredi • 19h00 à 23h00</span>
             <span class="chip">Métro Belleville</span>
           </div>
           <div class="card-footer">
             <div class="card-footer-left">
-              <span>8 intéressés</span>
+              <span class="participants" data-base="8">8 intéressés</span>
               <span class="dot"></span>
               <span>3 places restantes</span>
             </div>
-            <button class="btn-small">
+            <button class="btn-small participate-btn">
               <span class="icon">🤝</span>
               Je participe
             </button>
           </div>
+
+          <div class="card-footer" style="margin-top: 6px;">
+            <button class="comments-toggle">
+              💬 <span class="comments-count">2</span> commentaires
+              <span class="chevron">›</span>
+            </button>
+            <button class="like-btn" data-likes="17">
+              <span class="like-heart">♡</span>
+              <span class="like-count">17</span>
+            </button>
+          </div>
+
+          <div class="comments">
+            <div class="comment">
+              <span class="comment-author">Nadia</span>
+              <span>Je peux venir à partir de 20 h, c’est possible de rejoindre en cours de route</span>
+            </div>
+            <div class="comment">
+              <span class="comment-author">Tom</span>
+              <span>Je viens avec deux amis, trop hâte</span>
+            </div>
+            <div class="comment-input-row">
+              <input type="text" placeholder="Ajouter un commentaire..." />
+              <button class="comment-send-btn">Envoyer</button>
+            </div>
+          </div>
         </article>
 
         <!-- Exemple de post membre Huma -->
-        <article class="card">
+        <article class="card" data-card-id="2">
           <div class="card-header">
             <div class="avatar membre">LH</div>
             <div class="card-meta">
@@ -885,7 +1099,7 @@
           </div>
           <div class="card-body">
             Première mission avec Humanité ce matin dans une maison de retraite,
-            j'ai passé un moment incroyable avec les résidents. Merci à l’asso
+            j’ai passé un moment incroyable avec les résidents. Merci à l’association
             pour l’accueil, j’ai envie de continuer.
           </div>
           <div class="card-tags">
@@ -894,10 +1108,74 @@
             <span class="chip chip-soft">Partage d’expérience</span>
           </div>
           <div class="card-footer">
-            <div class="card-footer-left">
-              <span>💬 4 commentaires</span>
+            <button class="comments-toggle">
+              💬 <span class="comments-count">4</span> commentaires
+              <span class="chevron">›</span>
+            </button>
+            <button class="like-btn" data-likes="23">
+              <span class="like-heart">♡</span>
+              <span class="like-count">23</span>
+            </button>
+          </div>
+          <div class="comments">
+            <div class="comment">
+              <span class="comment-author">Claire</span>
+              <span>Merci pour ta présence ce matin, les résidents ont adoré</span>
             </div>
-            <span>❤️ 23</span>
+            <div class="comment">
+              <span class="comment-author">Yanis</span>
+              <span>Tu m’as motivé, je vais m’inscrire aussi</span>
+            </div>
+            <div class="comment">
+              <span class="comment-author">Association Lumière</span>
+              <span>On cherche des bénévoles pour le dimanche, si tu veux passer</span>
+            </div>
+            <div class="comment-input-row">
+              <input type="text" placeholder="Réagir..." />
+              <button class="comment-send-btn">Envoyer</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Autre profil membre -->
+        <article class="card" data-card-id="3">
+          <div class="card-header">
+            <div class="avatar membre">NO</div>
+            <div class="card-meta">
+              <div class="card-name-row">
+                <span class="card-name">Noha – Membre Huma</span>
+                <span class="badge membre">Membre</span>
+              </div>
+              <span class="card-time">Hier • Roubaix</span>
+            </div>
+          </div>
+          <div class="card-body">
+            Atelier vidéo avec un groupe de jeunes ce soir, on a tourné un micro trottoir
+            sur la solidarité. Humanité va changer la manière dont on s’engage.
+          </div>
+          <div class="card-tags">
+            <span class="chip chip-primary">Jeunesse</span>
+            <span class="chip">Création média</span>
+          </div>
+          <div class="card-footer">
+            <button class="comments-toggle">
+              💬 <span class="comments-count">1</span> commentaire
+              <span class="chevron">›</span>
+            </button>
+            <button class="like-btn" data-likes="12">
+              <span class="like-heart">♡</span>
+              <span class="like-count">12</span>
+            </button>
+          </div>
+          <div class="comments">
+            <div class="comment">
+              <span class="comment-author">Léo</span>
+              <span>On poste la vidéo sur Humanité quand</span>
+            </div>
+            <div class="comment-input-row">
+              <input type="text" placeholder="Ajouter un commentaire..." />
+              <button class="comment-send-btn">Envoyer</button>
+            </div>
           </div>
         </article>
       </section>
@@ -913,20 +1191,24 @@
           <input
             type="text"
             class="input"
+            id="searchInput"
             placeholder="Rechercher une mission, une ville, une cause..."
           />
         </div>
 
-        <div class="quick-filters">
-          <button class="filter-pill active">Proche de moi</button>
-          <button class="filter-pill">Ce week-end</button>
-          <button class="filter-pill">En ligne</button>
-          <button class="filter-pill">Urgent</button>
-          <button class="filter-pill">Environnement</button>
+        <div class="quick-filters" id="filters">
+          <button class="filter-pill active" data-filter="all">Proche de moi</button>
+          <button class="filter-pill" data-filter="weekend">Ce week end</button>
+          <button class="filter-pill" data-filter="online">En ligne</button>
+          <button class="filter-pill" data-filter="urgent">Urgent</button>
+          <button class="filter-pill" data-filter="environment">Environnement</button>
         </div>
 
         <div class="section-label">Suggestions</div>
-        <article class="card">
+
+        <article class="card search-result"
+          data-tags="education jeunesse lille proche"
+          data-filter-tags="all weekend">
           <div class="card-header">
             <div class="avatar association">EF</div>
             <div class="card-meta">
@@ -943,10 +1225,62 @@
           </div>
           <div class="card-tags">
             <span class="chip chip-primary">Éducation</span>
-            <span class="chip">Mercredi • 17h30</span>
+            <span class="chip">Mercredi • 17 h 30</span>
             <span class="chip">Engagement régulier</span>
           </div>
         </article>
+
+        <article class="card search-result"
+          data-tags="environnement parc nettoyage lille weekend"
+          data-filter-tags="all weekend environment urgent">
+          <div class="card-header">
+            <div class="avatar association">VP</div>
+            <div class="card-meta">
+              <div class="card-name-row">
+                <span class="card-name">Ville Propre</span>
+                <span class="badge association">Association</span>
+              </div>
+              <span class="card-time">À 1,1 km • Parc Jean Lebas</span>
+            </div>
+          </div>
+          <div class="card-body">
+            Opération de nettoyage du parc avec tri des déchets et sensibilisation.
+            Tout le matériel est fourni sur place.
+          </div>
+          <div class="card-tags">
+            <span class="chip chip-primary">Environnement</span>
+            <span class="chip">Samedi • 14 h à 17 h</span>
+            <span class="chip">Ouvert aux débutants</span>
+          </div>
+        </article>
+
+        <article class="card search-result"
+          data-tags="en ligne mentorat orientation france"
+          data-filter-tags="all online">
+          <div class="card-header">
+            <div class="avatar association">JF</div>
+            <div class="card-meta">
+              <div class="card-name-row">
+                <span class="card-name">Jeunes Futurs</span>
+                <span class="badge association">Association</span>
+              </div>
+              <span class="card-time">En ligne • France</span>
+            </div>
+          </div>
+          <div class="card-body">
+            Mentorat vidéo une fois par semaine pour des lycéens qui préparent
+            leurs études supérieures.
+          </div>
+          <div class="card-tags">
+            <span class="chip chip-primary">Accompagnement</span>
+            <span class="chip">En ligne</span>
+          </div>
+        </article>
+
+        <p class="empty-state" id="searchEmpty" style="display:none;">
+          Aucun résultat ne correspond pour l’instant. Essaie avec un autre mot
+          ou un filtre différent.
+        </p>
       </section>
 
       <!-- ÉCRAN AJOUTER UN POST -->
@@ -964,7 +1298,7 @@
                 Mission
               </button>
               <button class="toggle-option" data-type="story">
-                Photo / texte
+                Photo ou texte
               </button>
             </div>
           </div>
@@ -984,7 +1318,7 @@
                 📍
               </button>
             </div>
-            <button class="btn-primary">
+            <button class="btn-primary" id="publishBtn">
               <span>Publier</span>
               <span>⏵</span>
             </button>
@@ -994,6 +1328,10 @@
         <p class="screen-subtitle">
           Les missions sont mises en avant dans l’onglet Missions,
           les posts simples apparaissent dans le fil Humanité.
+        </p>
+        <p class="screen-subtitle" id="publishInfo" style="display:none;">
+          Ton post a été simulé comme publié dans le fil. Cette version est une
+          maquette en interface uniquement.
         </p>
       </section>
 
@@ -1011,7 +1349,7 @@
             <div>
               <div class="mission-title">Maraude du vendredi soir</div>
               <div class="mission-meta">
-                Solidarité Rue • Tous les vendredis • 19h00–23h00
+                Solidarité Rue • Tous les vendredis • 19 h à 23 h
               </div>
             </div>
             <span class="mission-badge">Confirmée</span>
@@ -1021,7 +1359,7 @@
           </div>
           <div class="mission-footer">
             <span>Prochaine date : 21 novembre</span>
-            <span>3/4 présences validées</span>
+            <span>3 participations validées sur 4</span>
           </div>
         </article>
 
@@ -1032,7 +1370,7 @@
             <div>
               <div class="mission-title">Atelier CV et orientation</div>
               <div class="mission-meta">
-                Jeunes Futurs • Samedi 10h00–12h30 • Métro Gambetta
+                Jeunes Futurs • Samedi 10 h à 12 h 30 • Métro Gambetta
               </div>
             </div>
             <span class="mission-badge" style="border-color: #facc15; color: #facc15;">
@@ -1041,7 +1379,7 @@
           </div>
           <div class="mission-footer">
             <span>Inscription envoyée</span>
-            <span>En attente de validation</span>
+            <span>Validation de l’association en cours</span>
           </div>
         </article>
       </section>
@@ -1074,7 +1412,7 @@
 
         <div class="profile-actions">
           <button class="btn-outline">Modifier le profil</button>
-          <button class="btn-outline">Préférences missions</button>
+          <button class="btn-outline" id="prefBtn">Préférences missions</button>
         </div>
 
         <div>
@@ -1090,11 +1428,21 @@
           <div class="profile-section-title">
             À propos
           </div>
-          <p class="screen-subtitle" style="margin-bottom: 0;">
+          <p class="screen-subtitle" style="margin-bottom: 8px;">
             Je suis membre Huma, je veux connecter les gens à des actions
-            concrètes, proches de chez eux. Humanité est mon espace pour
+            concrètes proches de chez eux. Humanité est mon espace pour
             rendre le bénévolat simple et accessible.
           </p>
+
+          <div class="profile-section-title">
+            Associations suivies
+          </div>
+          <div class="card-tags">
+            <span class="chip">Solidarité Rue</span>
+            <span class="chip">Jeunes Futurs</span>
+            <span class="chip">Ville Propre</span>
+            <span class="chip">Maison des Seniors Lille</span>
+          </div>
         </div>
       </section>
     </main>
@@ -1129,7 +1477,7 @@
 
   <!-- LOGIQUE SIMPLE EN JS -->
   <script>
-    // Navigation entre les différents écrans
+    // Navigation
     const screens = document.querySelectorAll(".screen");
     const navButtons = document.querySelectorAll("[data-target]");
 
@@ -1137,12 +1485,10 @@
       btn.addEventListener("click", () => {
         const targetId = btn.getAttribute("data-target");
 
-        // activer l'écran
         screens.forEach((s) => {
           s.classList.toggle("active", s.id === targetId);
         });
 
-        // mettre à jour les états visuels des éléments de nav
         document
           .querySelectorAll(".nav-item")
           .forEach((item) => item.classList.remove("active"));
@@ -1154,7 +1500,7 @@
       });
     });
 
-    // Toggle type de post (mission ou story)
+    // Bascule type de post
     const postTypeToggle = document.getElementById("postTypeToggle");
     const postContent = document.getElementById("postContent");
 
@@ -1179,7 +1525,7 @@
       });
     }
 
-    // Toggle type de compte (placeholder pour plus tard)
+    // Bascule type de compte
     const roleToggle = document.getElementById("roleToggle");
     const roleLabel = document.getElementById("roleLabel");
     let isMember = true;
@@ -1187,6 +1533,196 @@
     roleToggle.addEventListener("click", () => {
       isMember = !isMember;
       roleLabel.textContent = isMember ? "Membre Huma" : "Association";
+    });
+
+    // Bouton publier
+    const publishBtn = document.getElementById("publishBtn");
+    const publishInfo = document.getElementById("publishInfo");
+
+    if (publishBtn) {
+      publishBtn.addEventListener("click", () => {
+        publishInfo.style.display = "block";
+        publishInfo.style.opacity = "1";
+      });
+    }
+
+    // Likes
+    document.querySelectorAll(".like-btn").forEach((btn) => {
+      const countEl = btn.querySelector(".like-count");
+      const heartEl = btn.querySelector(".like-heart");
+      let baseLikes = Number(btn.dataset.likes) || 0;
+      let liked = false;
+
+      btn.addEventListener("click", () => {
+        liked = !liked;
+        btn.classList.toggle("liked", liked);
+        const newLikes = liked ? baseLikes + 1 : baseLikes;
+        countEl.textContent = newLikes;
+        heartEl.textContent = liked ? "♥" : "♡";
+      });
+    });
+
+    // Participation
+    document.querySelectorAll(".participate-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".card");
+        const participantsEl = card.querySelector(".participants");
+        const base = Number(participantsEl.dataset.base) || 0;
+        let current = participantsEl.dataset.current
+          ? Number(participantsEl.dataset.current)
+          : base;
+        current += 1;
+        participantsEl.dataset.current = current;
+        participantsEl.textContent = current + " intéressés";
+        btn.textContent = "Inscription envoyée";
+        btn.disabled = true;
+      });
+    });
+
+    // Commentaires
+    document.querySelectorAll(".card").forEach((card) => {
+      const commentsToggle = card.querySelector(".comments-toggle");
+      const commentsBlock = card.querySelector(".comments");
+      const commentsCountEl = card.querySelector(".comments-count");
+
+      if (commentsToggle && commentsBlock) {
+        commentsToggle.addEventListener("click", () => {
+          const open = commentsBlock.classList.toggle("open");
+          commentsToggle.classList.toggle("open", open);
+        });
+
+        const input = commentsBlock.querySelector("input");
+        const sendBtn = commentsBlock.querySelector(".comment-send-btn");
+
+        if (input && sendBtn) {
+          sendBtn.addEventListener("click", () => {
+            const text = input.value.trim();
+            if (!text) return;
+
+            const div = document.createElement("div");
+            div.className = "comment";
+            div.innerHTML =
+              '<span class="comment-author">Toi</span>' +
+              "<span>" +
+              text +
+              "</span>";
+            commentsBlock.insertBefore(div, commentsBlock.lastElementChild);
+
+            input.value = "";
+            if (commentsCountEl) {
+              commentsCountEl.textContent =
+                Number(commentsCountEl.textContent || "0") + 1;
+            }
+          });
+        }
+      }
+    });
+
+    // Recherche
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.querySelectorAll(".search-result");
+    const searchEmpty = document.getElementById("searchEmpty");
+    const filters = document.getElementById("filters");
+    let activeFilter = "all";
+
+    function applySearchFilter() {
+      const query = (searchInput.value || "").toLowerCase();
+      let visibleCount = 0;
+
+      searchResults.forEach((card) => {
+        const tags = card.dataset.tags || "";
+        const filterTags = card.dataset.filterTags || "";
+        const matchText = tags.toLowerCase().includes(query);
+        const matchFilter =
+          activeFilter === "all" || filterTags.includes(activeFilter);
+
+        const visible = matchText && matchFilter;
+        card.style.display = visible ? "block" : "none";
+        if (visible) visibleCount += 1;
+      });
+
+      searchEmpty.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener("input", applySearchFilter);
+    }
+
+    if (filters) {
+      filters.addEventListener("click", (e) => {
+        const btn = e.target.closest(".filter-pill");
+        if (!btn) return;
+        activeFilter = btn.dataset.filter;
+
+        filters
+          .querySelectorAll(".filter-pill")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        applySearchFilter();
+      });
+    }
+
+    // Préférences missions
+    const prefBtn = document.getElementById("prefBtn");
+    if (prefBtn) {
+      prefBtn.addEventListener("click", () => {
+        alert(
+          "Dans la vraie application tu pourrais choisir tes causes préférées et Humanité te proposerait des missions adaptées."
+        );
+      });
+    }
+
+    // Bandeau d’infos en direct
+    const liveMessagesEl = document.getElementById("liveMessages");
+    const liveItems = [
+      "🌍 " +
+        "27 bénévoles viennent de rejoindre une mission à Lille",
+      "🤝 " +
+        "Humanité connecte déjà 148 associations et des centaines de membres",
+      "🕯️ " +
+        "Nuit solidaire ce soir, plusieurs villes participent",
+      "📢 " +
+        "Une nouvelle association vient de rejoindre Humanité",
+      "🎓 " +
+        "Des étudiants organisent une collecte de fournitures scolaires"
+    ];
+
+    function updateLiveMessages() {
+      const text = liveItems.join(" • ");
+      liveMessagesEl.innerHTML = text.replace(
+        "Humanité",
+        '<span class="live-highlight">Humanité</span>'
+      );
+    }
+
+    updateLiveMessages();
+    setInterval(updateLiveMessages, 25000);
+
+    // Flux X simulé
+    const xTexts = [
+      "“Si le bénévolat était une monnaie, Humanité serait la banque centrale de la solidarité.”",
+      "“On a rempli un gymnase de dons en une matinée grâce aux membres Huma.”",
+      "“Nouveau défi solidaire lancé ce soir, on vise 500 heures de bénévolat en une semaine.”",
+      "“Les jeunes prouvent encore une fois que la solidarité est notre vraie force commune.”",
+      "“Derrière chaque action Humanité il y a une histoire qui mérite d’être racontée.”"
+    ];
+
+    const xFeedText = document.getElementById("xFeedText");
+    const xRefreshBtn = document.getElementById("xRefreshBtn");
+    const xLink = document.getElementById("xLink");
+
+    function randomXText() {
+      const index = Math.floor(Math.random() * xTexts.length);
+      xFeedText.textContent = xTexts[index];
+    }
+
+    randomXText();
+    setInterval(randomXText, 20000);
+
+    xRefreshBtn.addEventListener("click", randomXText);
+
+    xLink.addEventListener("click", () => {
+      window.open("https://x.com/search?q=%23Humanit%C3%A9", "_blank");
     });
   </script>
 </body>
